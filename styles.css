@@ -1,0 +1,872 @@
+/*==================================
+* Auteur        : "Prosox"
+==================================== */
+
+/*=========== TABLE DES MATIERES ===========
+
+1. CSS general
+2. Header
+3. A propos
+4. Competence
+5. Carousel
+6. Qualites
+7. Experience/Formations
+8. Contact
+9. Boutons
+10. Footer
+11. Responsivite
+
+==========================================*/
+
+/*-------------------------------------
+		1.CSS general
+--------------------------------------*/
+
+
+/* Styles de réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fond général et styles de base */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f0f0f0;
+    background-color: #030712;
+}
+
+hr.custom-hr {
+    width: 50%; /* Contrôle la largeur de la ligne */
+    border: none;
+    border-top: 1px solid white; /* Ligne blanche */
+    margin: 20px auto; /* Centre la ligne avec de l'espace autour */
+    opacity: 0.6; /* Opacité pour un effet plus doux */
+}
+
+/* Lueur autour de la souris */
+#mouse-glow {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    pointer-events: none; /* Ignore les clics pour cet élément */
+    background-color: transparent;
+    box-shadow: 0 0 200px 200px rgba(183, 58, 232, 0.15), 0 0 40px 30px rgba(183, 58, 232, 0.1);
+    transition: transform 0.1s ease-out;
+    transform: translate(-50%, -50%); /* Centre l'élément par rapport à la souris */
+    z-index: 9999;
+}
+
+/*-------------------------------------
+		2. Header
+--------------------------------------*/
+header {
+    padding: 40px;
+    text-align: center;
+    /* background: linear-gradient(135deg, #4a10b4, #030712); */
+}
+
+header h1 {
+    font-size: 2.5em;
+    /* color: #e4e4ff; */
+}
+
+/* Barre de recherche stylisée pour la citation */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d1f36; /* Couleur de fond pour contraster avec le texte */
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 60%;
+    /* max-width: 500px; */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.coffee-icon {
+    font-size: 1.5em; /* Taille de l'icône de café */
+    margin-right: 10px;
+}
+
+.quote-text {
+    font-size: 1em;
+    color: #e0e0e0; /* Couleur de texte */
+    font-style: italic;
+    margin: 0;
+}
+
+/* Point clignotant */
+#blinking-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: #9c27b0;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 8px rgba(156, 39, 176, 0.5);
+    animation: haloEffect 3s ease-out infinite; /* Animation halo */
+}
+
+@keyframes haloEffect {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(156, 39, 176, 0.8);
+        opacity: 1;
+    }
+    50% {
+        box-shadow: 0 0 20px 15px rgba(156, 39, 176, 0.5);
+        opacity: 0.5;
+    }
+    100% {
+        box-shadow: 0 0 30px 25px rgba(156, 39, 176, 0);
+        opacity: 0;
+    }
+}
+
+.typing-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.gradient-text {
+    font-size: 2.5em; /* Taille du texte */
+    font-weight: bold; /* Gras pour un meilleur effet */
+    background: linear-gradient(120deg, #b858eb, #14afd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cursor {
+    display: inline-block;
+    width: 5px;
+    height: 2.5em;
+    background-color: #14afd6;
+    margin-left: 5px;
+    animation: blink 0.7s steps(2) infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/*-------------------------------------
+		3. A propos
+--------------------------------------*/
+
+/* Styles de la section */
+.about-section {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Conteneur de la photo */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 300px; /* Ajoute une hauteur fixe pour afficher les images */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styles pour les images par défaut et au survol */
+.photo-default, .photo-hover {
+    width: 100%;
+    height: 100%; /* Remplit le conteneur */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 50%;
+}
+
+/* Image par défaut */
+.photo-default {
+    opacity: 1; /* Visible par défaut */
+}
+
+/* Image au survol */
+.photo-hover {
+    opacity: 0; /* Cachée par défaut */
+}
+
+/* Effet de survol */
+.image-container:hover .photo-default {
+    opacity: 0; /* Cache l'image par défaut au survol */
+}
+
+.image-container:hover .photo-hover {
+    opacity: 1; /* Affiche l'image de survol au survol */
+}
+
+
+
+/* Conteneur de texte */
+.text-container {
+    flex: 2;
+    color: #e0e0e0;
+    text-align: justify;
+    max-width: 600px;
+}
+
+/* Liste des informations personnelles */
+.personal-info {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 0.95em;
+}
+
+.personal-info li {
+    margin-bottom: 8px;
+}
+
+.personal-info strong {
+    color: #4f46e5;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/*-------------------------------------
+		4. Competence
+--------------------------------------*/
+
+/* Styles de la section des compétences */
+.skills-section {
+    padding: 60px 50px;
+    background-color: transparent;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+/* Titre de la section */
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b858eb;
+    margin-bottom: 60px;
+    background: linear-gradient(120deg, #b858eb, #14afd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Conteneur de cartes de compétences */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* Style des cartes de compétences */
+.skill-card {
+    background-color: #22224e;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px; /* Fixe la hauteur des cartes */
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Titre de chaque compétence */
+.skill-card h3 {
+    font-size: 1.5em;
+    color: #b858eb;
+    margin-bottom: 10px;
+}
+
+/* Description avec hauteur minimale */
+.skill-card p {
+    flex-grow: 1; /* Prend l'espace vertical disponible */
+    margin-bottom: 10px; /* Ajoute un espace sous le texte */
+}
+
+/* Barre de progression */
+.progress-bar {
+    background-color: #333366;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 8px;
+    margin-top: auto; /* Pousse la barre vers le bas de la carte */
+}
+
+.progress {
+    height: 100%;
+    background-color: #14afd6;
+    border-radius: 8px;
+}
+
+
+/*-------------------------------------
+        5.  Carousel
+--------------------------------------*/
+
+/* Fond blanc et configuration du slider */
+.slider {
+    background-color: #1e222f;
+    height: 200px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    align-items: center; /* Ajoute ceci pour centrer le contenu verticalement */
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+/* Animation de défilement des logos */
+.slide-track {
+    display: flex;
+    width: calc(250px * 14); /* Ajuster la largeur en fonction du nombre de logos */
+    animation: scroll 40s linear infinite; /* 40 secondes pour une animation fluide */
+    align-items: center;
+    justify-content: center; /* S'assurer que tout soit bien centré */
+}
+
+/* Chaque logo occupe une taille fixe */
+.slide {
+    width: 250px;
+    height: 100px;
+}
+
+.slide img {
+    margin-top: 60px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Assure que les images soient contenues dans leur cadre */
+    display: block;
+}
+
+/* Animation CSS pour le défilement */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7)); /* Faire défiler un set complet de logos */
+    }
+}
+
+/*-------------------------------------
+		6. Qualites
+--------------------------------------*/
+
+/* Styles de la section des qualités */
+.qualities-section {
+    padding: 60px 50px;
+    background-color: transparent;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+/* Titre de la section */
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b858eb;
+    margin-bottom: 30px;
+    background: linear-gradient(120deg, #b858eb, #14afd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Conteneur des cartes de qualités */
+.qualities-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Style des cartes de qualités */
+.quality-card {
+    background-color: #22224e;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px; /* Augmente la largeur */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px; /* Augmente la hauteur pour plus d’espace */
+}
+
+.quality-card:hover {
+    transform: translateY(-10px);
+}
+
+/* En-tête de chaque qualité (icône + titre) */
+.quality-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Icône de validation */
+.check-icon {
+    font-size: 1.5em;
+    color: #14afd6;
+}
+
+/* Titre de chaque qualité */
+.quality-card h3 {
+    font-size: 1.5em;
+    color: #b858eb;
+    margin: 0;
+}
+
+/* Description de la qualité */
+.quality-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/*-------------------------------------
+		7. Experience/Formations
+--------------------------------------*/
+
+/* Section Expériences */
+.experience-section {
+    padding: 60px 20px;
+    background-color: transparent;
+    color: #d1d5db;
+}
+
+.section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 40px;
+    background: linear-gradient(120deg, #4f46e5, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Conteneur d'expériences */
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Conteneur de chaque expérience en deux colonnes */
+.experience-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Timeline (colonne 1) */
+.experience-timeline {
+    width: 30%;
+    background-color: #1f2937;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+    text-align: left;
+}
+
+.position-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #60a5fa;
+    margin-bottom: 5px;
+}
+
+.experience-date {
+    font-size: 1em;
+    color: #9ca3af;
+}
+
+/* Détails (colonne 2) */
+.experience-details {
+    width: 65%;
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    color: #e5e7eb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.institution-title {
+    font-size: 1.5em;
+    color: #b858eb;
+    border-bottom: 2px solid #b858eb;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.experience-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #d1d5db;
+}
+
+/*-------------------------------------
+		8. Contact
+--------------------------------------*/
+/* Section de contact */
+.contact-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 40px;
+    background-color: #1a1a2e;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.contact-description {
+    font-size: 1em;
+    color: #a0a3b1;
+    margin-bottom: 30px;
+}
+
+/* Formulaire */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+.form-group input, .form-group textarea {
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 10px;
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.char-count {
+    text-align: right;
+    font-size: 0.9em;
+    color: #10b981;
+    margin-top: 5px;
+}
+
+
+
+/* Bouton d'envoi */
+.submit-btn {
+    background-color: #4f46e5;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #3b82f6;
+}
+
+/*-------------------------------------
+		9. Boutons
+--------------------------------------*/
+/* Section sans titre */
+.cta-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    background: transparent;
+}
+
+/* Boutons stylisés */
+.cta-button {
+    position: relative;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #4f46e5, #3b82f6);
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(75, 85, 99, 0.4);
+}
+
+/* Effet de dégradé animé */
+.cta-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.cta-button:hover::before {
+    transform: rotate(65deg);
+}
+
+/* Texte au-dessus de l'animation */
+.cta-button span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Style d'ombre intérieure au survol */
+.cta-button:active {
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/*-------------------------------------
+		10. Footer
+--------------------------------------*/
+
+/* Pied de page */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1d1f36;
+    color: #aaaaaa;
+    font-size: 0.9em;
+}
+
+
+/*-------------------------------------
+		11. Responsivite
+--------------------------------------*/
+
+/* Tablette : 768px - 480px */
+@media (max-width: 768px) {
+    /* Réduire la taille de certains titres et éléments */
+    header h1 {
+        font-size: 2em;
+    }
+
+    .section-title,
+    .contact-title {
+        font-size: 2em;
+    }
+
+    /* Présentation : aligner les éléments en colonne */
+    .about-section {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .photo-container {
+        max-width: 200px;
+        margin: 0 auto 20px;
+    }
+
+    .skills-container,
+    .qualities-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 10px;
+    }
+
+    /* Carousel : ajuste la hauteur et largeur */
+    .slider {
+        height: 250px; /* Permet à la hauteur de s'ajuster */
+    }
+
+    .slide-track {
+        display: flex;
+        gap: 10px; /* Espace entre les logos pour plus de flexibilité */
+        width: max-content; /* Ajuste la largeur totale */
+        animation: scroll 20s linear infinite;
+    }
+
+    .slide img {
+        max-height: 80px; /* Limite la taille des logos pour éviter le rognage */
+        transform: translateY(-35px); /* Monte les images vers le haut */
+        height: auto;
+        width: auto;
+    }
+
+    .experience-section {
+        padding: 40px 20px;
+        max-width: 100%; /* Prend toute la largeur sur mobile */
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    /* Les éléments "timeline" et "details" sont en colonne */
+    .experience-item {
+        display: flex;
+        flex-direction: column; /* Passe les éléments en colonne */
+        align-items: flex-start;
+        max-width: 100%; /* Largeur complète sur mobile */
+        margin-bottom: 20px; /* Espacement entre chaque expérience */
+    }
+
+    /* Les éléments prennent toute la largeur en disposition verticale */
+    .experience-timeline, .experience-details {
+        width: 100%;
+        margin-bottom: 10px; /* Espacement entre timeline et details */
+    }
+
+    .experience-timeline h2,
+    .experience-details h2 {
+        font-size: 1.2em;
+    }
+
+    /* Formulaire de contact : rendre les colonnes adaptatives */
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .experience-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Carousel : réduire la hauteur */
+    .slider {
+        height: 150px;
+    }
+}
+
+/* Mobile : moins de 480px */
+@media (max-width: 480px) {
+    /* Ajuster les tailles de texte pour les petits écrans */
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .section-title,
+    .contact-title {
+        font-size: 1.8em;
+    }
+
+    /* Présentation : aligner les éléments en colonne */
+    .about-section {
+        padding: 20px;
+    }
+
+    /* Réduire les boutons CTA pour mobile */
+    .cta-button {
+        font-size: 1em;
+        padding: 12px 24px;
+        border-radius: 40px;
+    }
+
+    /* Compétences et qualités : réduire les tailles de cartes */
+    .skill-card,
+    .quality-card {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ajustements pour les icônes du carousel */
+    .slider {
+        height: 120px;
+    }
+    .slide img {
+        height: 80px;
+    }
+
+    /* Footer et espacement général */
+    footer {
+        padding: 15px;
+        font-size: 0.8em;
+    }
+}
