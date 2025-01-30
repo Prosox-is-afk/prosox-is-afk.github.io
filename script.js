@@ -1,4 +1,5 @@
-const phrases = ["Pierre Burnier", "Étudiant en Informatique", "Développeur Web"];
+// MACHINE À ÉCRIRE
+const phrases = ["Pierre Burnier", "Étudiant", "Développeur Web"];
 let currentPhraseIndex = 0;
 let currentCharIndex = 0;
 let typing = true;
@@ -34,7 +35,7 @@ function typeEffect() {
 // Lancer l'effet
 typeEffect();
 
-
+// EFFET DE LUEUR SUR LA SOURIS
 const mouseGlow = document.getElementById("mouse-glow");
 
 document.addEventListener("mousemove", (e) => {
@@ -45,10 +46,47 @@ document.addEventListener("mousemove", (e) => {
 
 
 
-
+// NB CARACTERES CHAMP MESSAGE
 const messageInput = document.getElementById('message');
 const charCount = document.getElementById('char-count');
 
 messageInput.addEventListener('input', () => {
     charCount.textContent = messageInput.value.length;
 });
+
+
+
+// Récupération des éléments
+const openPopupLink = document.getElementById('open-popup'); // Lien dans le paragraphe
+const openPopupButton = document.getElementById('open-popup-button'); // Bouton "INFOS STAGE"
+const closePopup = document.getElementById('close-popup'); // Bouton de fermeture
+const popup = document.getElementById('popup'); // Conteneur de la pop-up
+
+// Fonction pour afficher la pop-up
+function showPopup(event) {
+    event.preventDefault(); // Empêche l'action par défaut (navigation ou soumission)
+    popup.style.display = 'flex'; // Affiche la pop-up
+}
+
+// Fonction pour cacher la pop-up
+function hidePopup() {
+    popup.style.display = 'none'; // Cache la pop-up
+}
+
+// Ouverture de la pop-up via le lien
+openPopupLink.addEventListener('click', showPopup);
+
+// Ouverture de la pop-up via le bouton
+openPopupButton.addEventListener('click', showPopup);
+
+// Fermeture de la pop-up via la croix
+closePopup.addEventListener('click', hidePopup);
+
+// Fermeture de la pop-up en cliquant en dehors du contenu
+window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+        hidePopup();
+    }
+});
+
+

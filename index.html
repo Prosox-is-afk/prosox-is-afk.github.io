@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pierre BURNIER</title>
-    <link rel="icon" href="fav.png" type="image/x-icon">
+    <link rel="icon" href="pb_cyberpunk.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +13,6 @@
         <div class="search-bar">
             <span class="coffee-icon">☕️</span>
             <p class="quote-text">"Mon code fonctionne grâce à deux choses : le café et l’inspiration nocturne."</p>
-            <div id="blinking-dot"></div>
         </div>
         <div class="typing-container">
             <h1 class="gradient-text" id="typing-effect"></h1><span class="cursor">|</span>
@@ -24,26 +23,53 @@
     <!-- Section principale -->
     <section class="about-section">
         <div class="image-container">
-            <img src="photodeprofil.png" alt="Photo de moi" class="photo-default">
-            <img src="BURNIER_Pierre.jpg" alt="Photo de moi au survol" class="photo-hover">
+            <img src="pp.jpg" alt="Photo de moi" class="photo-default">
         </div>
         <div class="text-container">
-            <p>Passionné par le développement web, j’ai entrepris un parcours dédié aux technologies numériques et à l’informatique. Curieux et motivé, j’ai acquis une solide maîtrise des langages front-end comme HTML, CSS et JavaScript, ainsi qu’une compréhension des bases du back-end. Ma formation en informatique m’a également permis d’explorer le design, l’expérience utilisateur et la gestion de projets techniques. J’aspire à créer des expériences en ligne interactives et intuitives, en conjuguant esthétique et performance. Aujourd’hui, je suis à la recherche de nouvelles opportunités pour perfectionner mes compétences et contribuer au succès de projets ambitieux, au sein d'une équipe inspirante et dynamique.</p>
+            <p>
+                Passionné par <span class="highlight">le développement web</span>, j’ai entrepris un parcours dédié aux <span class="highlight">technologies numériques </span> et <span class="highlight">à l’informatique</span>. <span class="highlight1">Curieux et motivé,</span> j’ai acquis une solide maîtrise des langages front-end comme <span class="highlight">HTML, CSS et JavaScript</span>, ainsi qu’une compréhension des bases du back-end. Ma formation en informatique m’a également permis d’explorer <span class="highlight1">le design, l’expérience utilisateur et la gestion de projets techniques.</span> J’aspire à créer des expériences en ligne interactives et intuitives, en conjuguant esthétique et performance. Aujourd’hui, je suis à la recherche d’un 
+                <a href="#" id="open-popup" class="link-highlight">stage</a> 
+                pour <span class="highlight">acquérir de l’expérience,</span> mettre en pratique mes compétences, et contribuer activement au succès de projets stimulants. Mon objectif est <span class="highlight1">d’évoluer dans un environnement collaboratif et inspirant</span>.
+            </p>
+            
+            
+        <!-- Pop-Up Modal -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span id="close-popup" class="popup-close">&times;</span>
+                <h2>INFO STAGE</h2>
+                <div class="popup-details">
+                    <p><strong>Date :</strong> du 26/05/2025 au 27/06/2025</p>
+                    <p><strong>Durée :</strong> 5 semaines</p>
+                    <p><strong>Domaine recherché :</strong> Développement Web</p>
+                    <p><strong>Zone Géographique :</strong> Bouches-du-Rhônes, Var ou Télétravail</p>
+                    <p><strong>Contact :</strong> <a href="mailto:pierreburnier07@gmail.com">pierreburnier07@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+            
         
             <!-- Informations personnelles -->
             <ul class="personal-info">
                 <li><strong>Nom:</strong> Burnier</li>
                 <li><strong>Prénom:</strong> Pierre</li>
-                <li><strong>Date de Naissance:</strong> 7 Mars 2005</li>
                 <li><strong>Téléphone:</strong> +33 7 81 58 82 55</li>
+                <li><strong>Ville:</strong> Marseille</li>
                 <li><strong>Email:</strong> pierreburnier07@gmail.com</li>
+                <li><strong>Permis de conduire:</strong> B1 + véhicule</li>
             </ul>
+
+        <div class="button-container">
+            <button id="open-popup-button" class="info-button">INFOS STAGE</button>
         </div>
+
+
 
     </section>
 
     <hr class="custom-hr">
-
+    <!-- Section Compétences -->
     <section class="skills-section">
         <h2 class="section-title">Mes Compétences</h2>
         <div class="skills-container">
@@ -51,28 +77,36 @@
                 <h3>Front-end</h3>
                 <p>Création d'interfaces utilisateurs interactives, assurant une expérience fluide et adaptée aux différents appareils et navigateurs.</p>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 65%;"></div>
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
             </div>
             <div class="skill-card">
                 <h3>Web Design</h3>
                 <p>Conception visuelle et expérience utilisateur, en mettant l'accent sur l'esthétique, la convivialité et la cohérence de la mise en page.</p>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 60%;"></div>
+                    <div class="progress" style="width: 70%;"></div>
                 </div>
             </div>
             <div class="skill-card">
                 <h3>Back-end</h3>
                 <p>Développement côté serveur pour garantir le traitement efficace des données et la sécurité des applications.</p>
                 <div class="progress-bar">
-                    <div class="progress" style="width: 40%;"></div>
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Databases</h3>
+                <p>Conception, gestion et optimisation de bases de données relationnelles et non relationnelles pour des applications web performantes et fiables.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 65%;"></div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Fin Section Compétences -->
 
 
-    <!-- Début Carousel Marques -->
+    <!-- Début Carousel -->
     <div class="slider">
         <div class="slide-track">
             <div class="slide">
@@ -85,17 +119,24 @@
                 <img src="js (2).png" height="100" width="250" alt="Logo 3" />
             </div>
             <div class="slide">
+                <img src="bootstrap.png" height="100" width="250" alt="Logo 2" />
+            </div>
+            <div class="slide">
+                <img src="react_vf.png" height="100" width="250" alt="Logo 6" />
+            </div>
+            <div class="slide">
                 <img src="python (2).png" height="100" width="250" alt="Logo 4" />
             </div>
             <div class="slide">
                 <img src="figma-logo-512.png" height="100" width="250" alt="Logo 5" />
             </div>
             <div class="slide">
-                <img src="mysql (2).png" height="100" width="250" alt="Logo 6" />
+                <img src="php.png" height="100" width="250" alt="Logo 7" />
             </div>
             <div class="slide">
-                <img src="Django-Logo.png" height="100" width="250" alt="Logo 7" />
+                <img src="mysql (2).png" height="100" width="250" alt="Logo 7" />
             </div>
+
             <!-- Répétition pour créer l'effet de boucle infinie -->
             <div class="slide">
                 <img src="html (2).png" height="100" width="250" alt="Logo 1" />
@@ -107,31 +148,40 @@
                 <img src="js (2).png" height="100" width="250" alt="Logo 3" />
             </div>
             <div class="slide">
+                <img src="bootstrap.png" height="100" width="250" alt="Logo 2" />
+            </div>
+            <div class="slide">
+                <img src="react_vf.png" height="100" width="250" alt="Logo 6" />
+            </div>
+            <div class="slide">
                 <img src="python (2).png" height="100" width="250" alt="Logo 4" />
             </div>
             <div class="slide">
                 <img src="figma-logo-512.png" height="100" width="250" alt="Logo 5" />
             </div>
             <div class="slide">
-                <img src="mysql (2).png" height="100" width="250" alt="Logo 6" />
+                <img src="php.png" height="100" width="250" alt="Logo 7" />
             </div>
             <div class="slide">
-                <img src="Django-Logo.png" height="100" width="250" alt="Logo 7" />
+                <img src="mysql (2).png" height="100" width="250" alt="Logo 7" />
             </div>
         </div>
     </div>
 			
-    <!-- Fin Carousel Marques  -->
+    <!-- Fin Carousel  -->
 
+
+
+    <!-- Début Section Qualité  -->
     <section class="qualities-section">
         <h2 class="section-title">Mes Qualités</h2>
         <div class="qualities-container">
             <div class="quality-card">
                 <div class="quality-header">
                     <span class="check-icon">✔️</span>
-                    <h3>Rigueur</h3>
+                    <h3>Communication</h3>
                 </div>
-                <p>Capacité à suivre des procédures précises et à maintenir une qualité constante dans chaque projet.</p>
+                <p>Je m’efforce d’établir des échanges compréhensifs, que ce soit pour partager mes idées, comprendre les attentes des autres ou collaborer efficacement. Cette qualité me permet de m’adapter à différents interlocuteurs avec aisance.</p>
             </div>
             
             <div class="quality-card">
@@ -139,21 +189,31 @@
                     <span class="check-icon">✔️</span>
                     <h3>Créativité</h3>
                 </div>
-                <p>Approche innovante pour résoudre des problèmes et concevoir des solutions uniques adaptées aux besoins des utilisateurs.</p>
+                <p>J’aime aborder les défis avec une approche originale, en proposant des solutions adaptées et uniques. Pour moi, la créativité est un atout indispensable pour innover et répondre aux besoins spécifiques d’un projet.</p>
             </div>
             
             <div class="quality-card">
                 <div class="quality-header">
                     <span class="check-icon">✔️</span>
-                    <h3>Adaptabilité</h3>
+                    <h3>Esprit d’équipe</h3>
                 </div>
-                <p>Capacité à s'ajuster rapidement aux changements de priorité et à apprendre de nouvelles compétences pour s'adapter aux défis.</p>
+                <p>J’apprécie travailler avec d’autres, partager des idées et apprendre des uns et des autres. Cette qualité me permet de contribuer positivement à la dynamique de groupe et d’atteindre des objectifs communs efficacement.</p>
+            </div>
+            <div class="quality-card">
+                <div class="quality-header">
+                    <span class="check-icon">✔️</span>
+                    <h3>Curiosité</h3>
+                </div>
+                <p>Je suis motivé par l'envie de découvrir, d'apprendre et d'approfondir mes compétences. Cette qualité me permet de m'adapter rapidement à de nouveaux outils et méthodes, tout en restant ouvert à l'innovation.</p>
             </div>
         </div>
     </section>
+    <!-- Fin Section Qualité -->
+
 
     <hr class="custom-hr">
 
+    <!-- Section Formation -->
     <section class="experience-section">
         <h2 class="section-title">Mes formations</h2>
         
@@ -161,20 +221,19 @@
             <!-- Expérience 1 -->
             <div class="experience-item">
                 <div class="experience-timeline">
-                    <h2 class="position-title">Lycéen</h2>
-                    <div class="experience-date">2020 - 2022</div>
+                    <h2 class="position-title">Étudiant</h2>
+                    <div class="experience-date">2024 - 2026</div>
                 </div>
                 <div class="experience-details">
-                    <h2 class="institution-title">Lycée Marseilleveyre</h2>
+                    <h2 class="institution-title">BTS SIO - Lycée Marie Curie</h2>
                     <p class="experience-description">
-                        Lors de mon parcours au lycée général, j'ai choisi les spécialités Mathématiques et Numérique & Sciences Informatiques (NSI). 
-                        C'est à cette occasion que j'ai découvert le langage Python, qui a rapidement éveillé mon intérêt pour la programmation. 
-                        J'ai également pu me familiariser avec les réseaux, les bases de données et l'algorithmie, des domaines qui m'ont permis de développer une véritable passion pour l'informatique et la résolution de problèmes complexes. 
-                        Ces compétences ont jeté les bases de mon orientation vers le développement web.
+                        Actuellement en BTS SIO, je prends beaucoup de plaisir à apprendre et à progresser dans le domaine de l'informatique. 
+                        J'aspire à rejoindre l'option SLAM, qui correspond parfaitement à mon objectif de devenir développeur de logiciels et développeur web. 
+                        Je suis très motivé par cette voie et déterminé à acquérir les compétences nécessaires pour exceller dans ce domaine, que ce soit à travers les projets que je mène ou les technologies que j'explore.
                     </p>
                 </div>
             </div>
-    
+
             <!-- Expérience 2 -->
             <div class="experience-item">
                 <div class="experience-timeline">
@@ -190,35 +249,37 @@
                     </p>
                 </div>
             </div>
-    
             <!-- Expérience 3 -->
             <div class="experience-item">
                 <div class="experience-timeline">
-                    <h2 class="position-title">Étudiant</h2>
-                    <div class="experience-date">2024 - Aujourd'hui</div>
+                    <h2 class="position-title">Lycéen</h2>
+                    <div class="experience-date">2020 - 2023</div>
                 </div>
                 <div class="experience-details">
-                    <h2 class="institution-title">BTS SIO - Lycée Marie Curie</h2>
+                    <h2 class="institution-title">BAC Général (Maths/NSI) - Lycée Marseilleveyre</h2>
                     <p class="experience-description">
-                        Actuellement en BTS SIO, je prends beaucoup de plaisir à apprendre et à progresser dans le domaine de l'informatique. 
-                        J'aspire à rejoindre l'option SLAM, qui correspond parfaitement à mon objectif de devenir développeur de logiciels et développeur web. 
-                        Je suis très motivé par cette voie et déterminé à acquérir les compétences nécessaires pour exceller dans ce domaine, que ce soit à travers les projets que je mène ou les technologies que j'explore.
+                        Lors de mon parcours au lycée général, j'ai choisi les spécialités Mathématiques et Numérique Sciences Informatiques (NSI). 
+                        C'est à cette occasion que j'ai découvert le langage Python, qui a rapidement éveillé mon intérêt pour la programmation. 
+                        J'ai également pu me familiariser avec les réseaux, les bases de données et l'algorithmie, des domaines qui m'ont permis de développer une véritable passion pour l'informatique et la résolution de problèmes complexes. 
+                        Ces compétences ont jeté les bases de mon orientation vers le développement web.
                     </p>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Fin Section Formation -->
 
     <hr class="custom-hr">
     
+    <!-- Section Contact -->
     <section class="contact-section">
         <h2 class="contact-title">Contact</h2>
         <p class="contact-description">
             Les informations envoyées via ce formulaire sont utilisées pour vous recontacter. Elles ne sont pas stockées dans une base de données et ne sont pas utilisées à des fins commerciales ou publicitaires.
         </p>
 
-        
-        <form class="contact-form">
+
+        <form class="contact-form" onsubmit="handleForm(event)">
             <div class="form-row">
                 <div class="form-group">
                     <label for="prenom">* Prénom</label>
@@ -244,20 +305,46 @@
             <button type="submit" class="submit-btn">Envoyez</button>
         </form>
     </section>
+    <!-- Fin Section Contact -->
+
+    <section class="social-section">
+        <h2 class="social-title">Suivez-moi</h2>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/pierre-burnier-986002339/" target="_blank" class="social-link">
+                <img src="linkedin-icon.png" alt="LinkedIn">
+                <span><strong>Pierre Burnier</strong></span>
+            </a>
+            <a href="https://github.com/Prosox-is-afk" target="_blank" class="social-link">
+                <img src="github_vf.png" alt="GitHub">
+                <span><strong>prosox-is-afk</strong></span>
+            </a>
+            <a href="https://discord.gg/42GhYwgU" target="_blank" class="social-link">
+                <img src="discord-icon.png" alt="Discord">
+                <span><strong>prosox.dev</strong></span>
+            </a>
+            <a href="https://www.instagram.com/_.pierre.brn/" target="_blank" class="social-link">
+                <img src="instagram-icon.png" alt="Instagram">
+                <span><strong>_.pierre.brn</strong></span>
+            </a>
+        </div>
+    </section>
+    
 
     <hr class="custom-hr">
 
+    <!-- Section Boutons -->
     <section class="cta-section">
-        <a href="cv_burnier_pierre.pdf" class="cta-button" download>Télécharger mon CV en PDF</a>
-        <a href="http://my.net.free.fr/" class="cta-button" target="_blank">Voir mon Portfolio</a>
-    </section>        
+        <a href="BurnierPierre_CV.pdf" class="cta-button" target="_blank" download>Télécharger mon CV en PDF</a>
+    </section>
+            
 
     <!-- Pied de page -->
     <footer>
-        <p>© 2024 Created by Prosox - Mon CV</p>
+        <p>© 2024 Created by Pierre BURNIER</p>
     </footer>
 
     <div id="mouse-glow"></div>
     <script src="script.js"></script>
+    <script src="form-handler.js"></script>
 </body>
 </html>

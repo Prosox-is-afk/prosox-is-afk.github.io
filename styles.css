@@ -12,9 +12,10 @@
 6. Qualites
 7. Experience/Formations
 8. Contact
-9. Boutons
-10. Footer
-11. Responsivite
+9. Réseaux Sociaux
+10. Boutons
+11. Footer
+12. Responsivite
 
 ==========================================*/
 
@@ -130,7 +131,10 @@ header h1 {
 }
 
 .typing-container {
-    display: inline-flex;
+    height: 2.5em; /* Ajustez cette valeur pour correspondre à la hauteur de votre plus long texte */
+    overflow: hidden; /* Pour éviter tout débordement */
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -180,45 +184,25 @@ header h1 {
     position: relative;
     width: 100%;
     max-width: 300px;
-    height: 300px; /* Ajoute une hauteur fixe pour afficher les images */
+    height: 300px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Styles pour les images par défaut et au survol */
-.photo-default, .photo-hover {
+/* Styles pour les images par défaut */
+.photo-default {
     width: 100%;
     height: 100%; /* Remplit le conteneur */
     object-fit: cover;
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     transition: opacity 0.5s ease;
     border-radius: 50%;
+    opacity: 1;
 }
-
-/* Image par défaut */
-.photo-default {
-    opacity: 1; /* Visible par défaut */
-}
-
-/* Image au survol */
-.photo-hover {
-    opacity: 0; /* Cachée par défaut */
-}
-
-/* Effet de survol */
-.image-container:hover .photo-default {
-    opacity: 0; /* Cache l'image par défaut au survol */
-}
-
-.image-container:hover .photo-hover {
-    opacity: 1; /* Affiche l'image de survol au survol */
-}
-
-
 
 /* Conteneur de texte */
 .text-container {
@@ -245,6 +229,139 @@ header h1 {
     font-weight: bold;
     margin-right: 5px;
 }
+
+/* Styles pour le lien */
+.link-highlight {
+    color: #4f46e5;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Styles pour le conteneur de la pop-up */
+.popup {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre transparent */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenu de la pop-up */
+.popup-content {
+    background-color: #1e293b; /* Fond principal */
+    color: #f0f0f0; /* Couleur du texte */
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Ombre pour l'effet visuel */
+    position: relative;
+}
+
+/* Bouton de fermeture */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Titre de la pop-up */
+.popup-content h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4f46e5; /* Couleur du titre */
+}
+
+/* Détails dans la pop-up */
+.popup-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Lien pour l'email */
+.popup-details a {
+    color: #14afd6; /* Couleur du lien */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.popup-details a:hover {
+    text-decoration: underline;
+}
+
+/* Animation d'ouverture */
+.popup-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Style pour mettre en surbrillance */
+.highlight {
+    color: #ff5252; /* Rouge vif */
+    font-weight: bold; /* Met en évidence le texte */
+}
+.highlight1 {
+    color: #6543fd; /* Rouge vif */
+    font-weight: bold; /* Met en évidence le texte */
+}
+
+/* Conteneur pour centrer le bouton */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Bouton stylisé */
+.info-button {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #ff5252, #ff867f);
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Effet au survol */
+.info-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(255, 82, 82, 0.4);
+    background: linear-gradient(135deg, #ff867f, #ff5252);
+}
+
+/* Effet lors du clic */
+.info-button:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 
 /*-------------------------------------
 		4. Competence
@@ -357,8 +474,9 @@ header h1 {
 /* Animation de défilement des logos */
 .slide-track {
     display: flex;
+    gap: 45px; /* Ajuste l'espace entre les logos */
     width: calc(250px * 14); /* Ajuster la largeur en fonction du nombre de logos */
-    animation: scroll 40s linear infinite; /* 40 secondes pour une animation fluide */
+    animation: scroll 35s linear infinite; /* 40 secondes pour une animation fluide */
     align-items: center;
     justify-content: center; /* S'assurer que tout soit bien centré */
 }
@@ -431,7 +549,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 220px; /* Augmente la hauteur pour plus d’espace */
+    height: 300px; /* Augmente la hauteur pour plus d’espace */
 }
 
 .quality-card:hover {
@@ -548,6 +666,8 @@ header h1 {
     font-size: 1em;
     line-height: 1.6;
     color: #d1d5db;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 /*-------------------------------------
@@ -650,8 +770,88 @@ header h1 {
     background-color: #3b82f6;
 }
 
+.success {
+    color: #4caf50; /* Vert */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error {
+    color: #f44336; /* Rouge */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
 /*-------------------------------------
-		9. Boutons
+		9. Réseaux Sociaux
+--------------------------------------*/
+
+.social-section {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.social-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+    background: linear-gradient(120deg, #b858eb, #14afd6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    gap: 15px; /* Espacement entre les éléments */
+    align-items: center; /* Alignement des éléments à gauche */
+    justify-content: center; /* Centrer verticalement */
+}
+
+.social-link {
+    display: flex;
+    align-items: center; /* Alignement des icônes et textes sur une ligne */
+    gap: 10px; /* Espacement entre l'icône et le texte */
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1em;
+    width: 100%; /* Prend toute la largeur disponible pour uniformité */
+    transition: color 0.3s ease, transform 0.3s ease;
+    justify-content: center; /* Ajoute ceci pour centrer icône et texte */
+    text-align: center; /* Ajoute ceci pour centrer le texte */
+}
+
+.social-link img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0; /* Garde les icônes à taille fixe */
+}
+
+.social-link span {
+    font-size: 0.9em;
+    color: #e0e0e0;
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.social-link:hover {
+    color: #ffffff;
+}
+
+.social-link img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+
+/*-------------------------------------
+		10. Boutons
 --------------------------------------*/
 /* Section sans titre */
 .cta-section {
@@ -714,7 +914,7 @@ header h1 {
 }
 
 /*-------------------------------------
-		10. Footer
+		11. Footer
 --------------------------------------*/
 
 /* Pied de page */
@@ -728,7 +928,7 @@ footer {
 
 
 /*-------------------------------------
-		11. Responsivite
+		12. Responsivite
 --------------------------------------*/
 
 /* Tablette : 768px - 480px */
